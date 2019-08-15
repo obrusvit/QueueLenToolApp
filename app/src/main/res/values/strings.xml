@@ -4,4 +4,16 @@
     <string name="button_send_cars_len">Send</string>
     <string name="button_cars_plus">+1</string>
     <string name="button_cars_minus">-1</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="destination_socket_header">Destination socket</string>
+    <string name="debug_header">Debug</string>
+
+    <!-- Preference keys -->
+
+
+    <!-- Sync Preferences -->
+    <string name="debug_title">Debug mode</string>
+    <string name="toolbar_go_to_settings">Settings</string>
 </resources>
