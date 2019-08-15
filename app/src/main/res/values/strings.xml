@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QueueLenTool</string>
+    <string name="edit_text_cars_len_hint">cars</string>
+    <string name="button_send_cars_len">Send</string>
+    <string name="button_cars_plus">+1</string>
+    <string name="button_cars_minus">-1</string>
+</resources>
