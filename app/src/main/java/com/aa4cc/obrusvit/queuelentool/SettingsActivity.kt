@@ -28,6 +28,11 @@ class SettingsActivity : AppCompatActivity() {
             portPreference?.setOnBindEditTextListener {
                 editText -> editText.inputType = InputType.TYPE_CLASS_NUMBER
             }
+            // set approach EditTextPreference to number type
+            val approachPreference: EditTextPreference? = findPreference("approach_num")
+            approachPreference?.setOnBindEditTextListener {
+                editText -> editText.inputType = InputType.TYPE_CLASS_NUMBER
+            }
         }
 
 

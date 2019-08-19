@@ -3,8 +3,6 @@ package com.aa4cc.obrusvit.queuelentool
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -78,25 +76,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     /* private fun area */
-    private fun performBgTask(messageStr: String){
+    private fun performBgTask(numToMsg: String){
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
         val debug = pref.getBoolean("debug", false)
+        val approach = pref.getString("approach_num", "1")
 
         val socket = if(!debug) {
             val addr = pref.getString("destination_address", "")
             val port = pref.getString("destination_port", "0")
             if (addr == null || port == null) {
-                toast("Not sent, address or port null")
+                toast("Not sent, address or port is null")
                 return
             }
             UdpSocketOptions(addr, port.toInt())
         }else{
             DefaultUdpSocketSoftOptions
         }
+        val msgToSend = "$approach $numToMsg"
 
-        toast("Sending $messageStr")
+        toast("Sending $numToMsg cars, approach is $approach")
         doAsync {
-            val ret = UdpSender.sendUDP(messageStr, socket)
+            val ret = UdpSender.sendUDP(msgToSend, socket)
             uiThread {
                 when(ret) {
                     true -> toast("Successfully sent")

@@ -29,6 +29,16 @@
                 app:useSimpleSummaryProvider="true"/>
     </PreferenceCategory>
 
+    <PreferenceCategory
+        app:title="Approach">
+
+        <EditTextPreference
+            app:key="approach_num"
+            app:title="Junction approach"
+            app:defaultValue="1"
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+
 
     <PreferenceCategory
             app:title="@string/debug_header">
@@ -38,7 +48,6 @@
                 app:title="@string/debug_title"
                 app:summaryOn="Use default (192.168.0.25/10002)"
                 app:summaryOff="Use Address and Port specified above"/>
-
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>
